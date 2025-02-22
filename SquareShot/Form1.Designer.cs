@@ -32,13 +32,16 @@
             pictureBox1 = new PictureBox();
             saveFileDialog1 = new SaveFileDialog();
             folderBrowserDialog1 = new FolderBrowserDialog();
-            listBox1 = new ListBox();
+            numericUpDown1 = new NumericUpDown();
+            numericUpDown2 = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(13, 12);
+            button1.Location = new Point(13, 226);
             button1.Name = "button1";
             button1.Size = new Size(269, 43);
             button1.TabIndex = 0;
@@ -48,28 +51,36 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(12, 61);
+            pictureBox1.Location = new Point(13, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(269, 261);
+            pictureBox1.Size = new Size(269, 178);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // listBox1
+            // numericUpDown1
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(298, 439);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(120, 94);
-            listBox1.TabIndex = 2;
+            numericUpDown1.Location = new Point(13, 197);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(55, 23);
+            numericUpDown1.TabIndex = 2;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(74, 197);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(56, 23);
+            numericUpDown2.TabIndex = 3;
+            numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(294, 332);
-            Controls.Add(listBox1);
+            ClientSize = new Size(295, 278);
+            Controls.Add(numericUpDown2);
+            Controls.Add(numericUpDown1);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             ForeColor = SystemColors.ActiveCaptionText;
@@ -77,6 +88,8 @@
             Name = "Form1";
             Text = "SquareShot";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
         }
 
@@ -87,6 +100,7 @@
     
         private SaveFileDialog saveFileDialog1;
         private FolderBrowserDialog folderBrowserDialog1;
-        private ListBox listBox1;
+        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDown2;
     }
 }

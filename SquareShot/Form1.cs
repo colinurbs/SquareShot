@@ -13,7 +13,7 @@ public partial class Form1 : Form
     private Bitmap screenBitmap;
     private string saveDirectory;
     private int screenshotCounter = 0;
-    private string selectedDirectory; 
+    private string selectedDirectory;
     private Bitmap lastScreenshot;
     private int height = 512;
     private int width = 512;
@@ -22,29 +22,16 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
-        this.MouseWheel += MainForm_MouseWheel;
+        numericUpDown1.Minimum = 256;
+        numericUpDown1.Maximum = 2048;
+        numericUpDown1.Increment = 1;
+        numericUpDown1.Value = height;
+        numericUpDown2.Minimum = 256;
+        numericUpDown2.Maximum = 2048;
+        numericUpDown2.Increment = 1;
+        numericUpDown2.Value = width;
     }
 
-    private void MainForm_MouseWheel(object sender, MouseEventArgs e)
-    {
-        if (isCapturing == true)
-        {
-            isCapturing = false;
-            if (e.Delta > 0)
-            {
-                height++;
-                width++;
-            }
-            if (e.Delta < 0)
-            {
-                height--;
-                width--;
-
-            }
-            isCapturing = true;
-            CreateOverlay();
-        }
-    }
     private void button1_Click(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(selectedDirectory))
@@ -74,7 +61,7 @@ public partial class Form1 : Form
             Bounds = Screen.PrimaryScreen.Bounds,
             TopMost = true,
             BackColor = Color.Black,
-            Opacity = 0.05,
+            Opacity = 0.02,
             Cursor = Cursors.Cross,
             ShowInTaskbar = false
         };
@@ -85,8 +72,8 @@ public partial class Form1 : Form
             using (Pen pen = new Pen(Color.White, 3))
             {
                 e.Graphics.DrawRectangle(pen,
-                    cursorPos.X - (width/2),
-                    cursorPos.Y -  (height/2),
+                    cursorPos.X - (width / 2),
+                    cursorPos.Y - (height / 2),
                     width, height);
             }
         };
@@ -141,5 +128,15 @@ public partial class Form1 : Form
         };
 
         overlayForm.Show();
+    }
+
+    private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+    {
+       width = (int)numericUpDown1.Value;
+    }
+
+    private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+    {
+        height = (int)numericUpDown2.Value;
     }
 }
