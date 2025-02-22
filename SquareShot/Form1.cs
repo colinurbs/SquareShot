@@ -17,6 +17,7 @@ public partial class Form1 : Form
     private Bitmap lastScreenshot;
     private int height = 512;
     private int width = 512;
+    private string[] filetypes = ["jpg, png"];
 
 
     public Form1()
@@ -60,7 +61,7 @@ public partial class Form1 : Form
             FormBorderStyle = FormBorderStyle.None,
             Bounds = Screen.PrimaryScreen.Bounds,
             TopMost = true,
-            BackColor = Color.Black,
+            BackColor = Color.Gray,
             Opacity = 0.02,
             Cursor = Cursors.Cross,
             ShowInTaskbar = false
@@ -132,11 +133,12 @@ public partial class Form1 : Form
 
     private void numericUpDown1_ValueChanged(object sender, EventArgs e)
     {
-       width = (int)numericUpDown1.Value;
+        width = (int)numericUpDown1.Value;
     }
 
     private void numericUpDown2_ValueChanged(object sender, EventArgs e)
     {
         height = (int)numericUpDown2.Value;
     }
+
 }
