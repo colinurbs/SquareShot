@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             pictureBox1 = new PictureBox();
             saveFileDialog1 = new SaveFileDialog();
             folderBrowserDialog1 = new FolderBrowserDialog();
             numericUpDown1 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -41,7 +44,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(13, 226);
+            button1.Location = new Point(12, 226);
             button1.Name = "button1";
             button1.Size = new Size(269, 43);
             button1.TabIndex = 0;
@@ -53,7 +56,7 @@
             // 
             pictureBox1.BackColor = SystemColors.Control;
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox1.Location = new Point(13, 12);
+            pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(269, 178);
             pictureBox1.TabIndex = 1;
@@ -61,7 +64,7 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(13, 197);
+            numericUpDown1.Location = new Point(12, 197);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(55, 23);
             numericUpDown1.TabIndex = 2;
@@ -87,6 +90,7 @@
             Controls.Add(button1);
             ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "SquareShot";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -104,5 +108,6 @@
         private FolderBrowserDialog folderBrowserDialog1;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
+        private ToolTip toolTip1;
     }
 }
